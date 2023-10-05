@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="css/plugins/slick.1.8.1.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- Search -->
+    <div
+        class="p-6 min-h-screen flex justify-center items-start min-w-screen w-full bg-black bg-opacity-90 fixed top-0 left-0 z-50 search-form-container invisible opacity-0 transition duration-300 delay-150 ease-in">
+        <img src="./assets/images/close_big.png" alt="close"
+            class="absolute top-8 right-8 close-search cursor-pointer" />
+        <form action="#"
+            class="mt-10 w-full flex justify-center invisible translate-y-4 opacity-0 transition duration-300 delay-150 searchform">
+            <div class="bg-white w-full max-w-[500px] flex items-center border-b-4 border-[#00D1B2]">
+                <input type="text" placeholder="Search..." class="p-4 w-[92%] focus:outline-none" id="input__search" />
+                <label for="input__search">
+                    <img src="./assets/images/search_icon.png" alt="icon" />
+                </label>
+            </div>
+        </form>
+    </div>
+    <!-- Mobile Header -->
+    <div
+        class="flex flex-col justify-between min-h-screen w-screen bg-[#3873CC] text-white fixed left-0 top-0 z-50 mobile-menu -translate-x-full ease-in duration-300">
+        <img src="./assets/images/close_big.png" alt="icon" class="mobile_icon_close absolute top-4 right-4 z-100" />
+        <ul class="flex flex-col gap-3 p-3 mt-8">
+            <li>
+                <a href="#" class="capitalize">home</a>
+            </li>
+            <li class="relative">
+                <div class="flex items-center gap-2 mobile_droptoggler">
+                    <span href="#" class="capitalize">about us</span>
+                    <img src="./assets/images/caret_down_w.png" alt="icon" />
+                </div>
+
+                <ul class="mobile_dropdown hidden flex flex-col pl-1 gap-2 overflow-hidden">
+                    <li>
+                        <a href="./mission.html" target="_blank" class="capitalize text-[14px]">mission / vission</a>
+                    </li>
+                    <li><a href="./corevalues.html" target="_blank" class="capitalize text-[14px]">core values</a></li>
+                    <li>
+                        <a href="./profile.html" target="_blank" class="capitalize text-[14px]">company profile</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="relative">
+                <div class="flex items-center gap-2 mobile_droptoggler">
+                    <span href="#" class="capitalize">services</span>
+                    <img src="./assets/images/caret_down_w.png" alt="icon" />
+                </div>
+
+                <ul class="mobile_dropdown hidden flex flex-col pl-1 gap-2 overflow-hidden">
+                    <li>
+                        <a href="./billing.html" target="_blank" class="capitalize text-[14px]">Medical Billing &
+                            Coding</a>
+                    </li>
+                    <li>
+                        <a href="./rcm.html" target="_blank" class="capitalize text-[14px]">RCM Services</a>
+                    </li>
+                    <li>
+                        <a href="./credentialing.html" target="_blank" class="capitalize text-[14px]">Credentialing</a>
+                    </li>
+                    <li>
+                        <a href="./practice-managment.html" target="_blank" class="capitalize text-[14px]">Practice
+                            Management</a>
+                    </li>
+                    <li>
+                        <a href="./ar.html" target="_blank" class="capitalize text-[14px]">AR Follow Up & Danial
+                            Management</a>
+                    </li>
+                    <li>
+                        <a href="./prior-authorization.html" target="_blank" class="capitalize text-[14px]">prior
+                            authorization</a>
+                    </li>
+                    <li>
+                        <a href="./scribing.html" target="_blank" class="capitalize text-[14px]">scribing</a>
+                    </li>
+                    <li>
+                        <a href="./verification.html" target="_blank" class="capitalize text-[14px]">verification of
+                            benefits</a>
+                    </li>
+                    <li>
+                        <a href="./website-dev.html" target="_blank" class="capitalize text-[14px]">website
+                            development</a>
+                    </li>
+                    <li>
+                        <a href="./virtual.html" target="_blank" class="capitalize text-[14px]">virtual assistant</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="flex items-center gap-2">
+                <a href="./blogs.html" class="capitalize">blogs</a>
+            </li>
+            <li class="flex items-center gap-2">
+                <a href="./faq.html" class="capitalize">FAQ's</a>
+            </li>
+            <li class="relative">
+                <div class="flex items-center gap-2 mobile_droptoggler">
+                    <span href="#" class="capitalize">contact us</span>
+                    <img src="./assets/images/caret_down_w.png" alt="icon" />
+                </div>
+
+                <ul class="mobile_dropdown hidden flex flex-col pl-1 gap-2 overflow-hidden">
+                    <li><a href="#" class="capitalize text-[14px]">connect with sales</a></li>
+                    <li><a href="#" class="capitalize text-[14px]" data-te-toggle="modal" data-te-target="#demoModal"
+                            data-te-ripple-init data-te-ripple-color="light">book a demo</a></li>
+                    <li>
+                        <a href="#" class="capitalize text-[14px]" data-te-toggle="modal" data-te-target="#requestModal"
+                            data-te-ripple-init data-te-ripple-color="light">request a free practice
+                            analysis</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="icons p-3 flex flex-col gap-5">
+            <li>
+                <a href="tel:+92-345-5689" class="flex items-center gap-2">
+                    <img src="./assets/images/phone_outline.png" alt="icon" />
+                    +92-345-5689
+                </a>
+            </li>
+            <li>
+                <a href="mailto:primedoc@info.com" class="flex items-center gap-2">
+                    <img src="./assets/images/mail.png" alt="icon" />
+                    primedoc@info.com
+                </a>
+            </li>
+            <li class="flex gap-4 items-center">
+                <a href="#"><img src="./assets/images/facebook.png" alt="facebook" /></a>
+                <a href="#"><img src="./assets/images/twitter.png" alt="twitter" /></a>
+                <a href="#"><img src="./assets/images/instagram.png" alt="instagram" /></a>
+                <a href="#"><img src="./assets/images/invision.png" alt="linkedin" /></a>
+            </li>
+        </ul>
+    </div>
+    <!-- Sub Header -->
+    <div class="sub-header py-2 bg-[#3873CC] hidden md:block">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-6 text-white">
+                    <a href="tel:+92-345-5689" class="flex items-center gap-2">
+                        <img src="./assets/images/phone_outline.png" alt="icon" />
+                        +92-345-5689
+                    </a>
+                    <a href="mailto:primedoc@info.com" class="flex items-center gap-2">
+                        <img src="./assets/images/mail.png" alt="icon" />
+                        primedoc@info.com
+                    </a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#"><img src="./assets/images/facebook.png" alt="facebook" /></a>
+                    <a href="#"><img src="./assets/images/twitter.png" alt="twitter" /></a>
+                    <a href="#"><img src="./assets/images/instagram.png" alt="instagram" /></a>
+                    <a href="#"><img src="./assets/images/invision.png" alt="invision" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="py-4 bg-white sticky top-0 z-10">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="flex justify-between items-center">
+                <a href="/index.html">
+                    <img src="./assets/images/Logo_Header_White.png" alt="Logo" />
+                </a>
+                <nav>
+                    <ul class="hidden xl:flex gap-12">
+                        <li class="flex gap-2 items-center">
+                            <a href="#" class="nav__link font-medium text-[#1F2937] capitalize">Home</a>
+                        </li>
+                        <li class="flex items-center gap-2 group relative">
+                            <a href="#" class="nav__link font-medium text-[#1F2937] capitalize">about us</a>
+                            <img src="./assets/images/caret_down.png" alt="icon" />
+                            <ul
+                                class="shadow-lg absolute w-max top-8 right-0 2xl:left-0 bg-transparent border-t border-[#3873CC] opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 before:block before:w-full before:absolute before:-top-8 before:h-10 before:bg-transparent">
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./mission.html" target="_blank" class="text-gray-700 text-[14px]">Mission / Values</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./corevalues.html" target="_blank" class="text-gray-700 text-[14px]">Core Values</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./profile.html" target="_blank" class="text-gray-700 text-[14px]">Company Profile</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex items-center gap-2 group relative">
+                            <a href="#" class="nav__link font-medium text-[#1F2937] capitalize">services</a>
+                            <img src="./assets/images/caret_down.png" alt="icon" />
+                            <ul
+                                class="shadow-lg absolute w-max top-8 right-0 2xl:left-0 bg-transparent border-t border-[#3873CC] opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 before:block before:w-full before:absolute before:-top-8 before:h-10 before:bg-transparent">
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./billing.html" target="_blank" class="text-gray-700 text-[14px]">Medical
+                                        Billing &
+                                        Coding</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./rcm.html" target="_blank" class="text-gray-700 text-[14px]">Revenue Cycle
+                                        Management</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./credentialing.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Credentialing</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./practice-managment.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Practice
+                                        Management</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./ar.html" target="_blank" class="text-gray-700 text-[14px]">AR Follow Up &
+                                        Danial
+                                        Management</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./prior-authorization.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Prior
+                                        Authorization</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./scribing.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Scribing</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./verification.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Verification Of
+                                        Benefits</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./website-dev.html" target="_blank"
+                                        class="text-gray-700 text-[14px]">Website
+                                        Development</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="./virtual.html" target="_blank" class="text-gray-700 text-[14px]">Virtual
+                                        Assistant</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex gap-2 items-center">
+                            <a href="./blogs.html" class="nav__link font-medium text-[#1F2937] capitalize">blogs</a>
+                        </li>
+                        <li class="flex gap-2 items-center">
+                            <a href="./faq.html" class="nav__link font-medium text-[#1F2937] capitalize">FAQ's</a>
+                        </li>
+                        <li class="flex items-center gap-2 group relative">
+                            <a href="#" class="nav__link font-medium text-[#1F2937] capitalize">contact us</a>
+                            <img src="./assets/images/caret_down.png" alt="icon" />
+                            <ul
+                                class="shadow-lg absolute w-max top-8 right-0 2xl:left-0 bg-transparent border-t border-[#3873CC] opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 before:block before:w-full before:absolute before:-top-8 before:h-10 before:bg-transparent">
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="#" class="text-gray-700 text-[14px]">Connect With Sales</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100">
+                                    <a href="#" class="text-gray-700 text-[14px]" data-te-toggle="modal"
+                                        data-te-target="#demoModal" data-te-ripple-init
+                                        data-te-ripple-color="light">Book A Demo</a>
+                                </li>
+                                <li class="bg-white px-4 py-1 hover:bg-gray-100" data-te-toggle="modal"
+                                    data-te-target="#requestModal" data-te-ripple-init data-te-ripple-color="light">
+                                    <a href="#" class="text-gray-700 text-[14px]">Request A Free Practice Analysis</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex gap-2 items-center cursor-pointer">
+                            <img src="./assets/images/search_icon_bl.png" alt="icon" class="search_icon_toggler" />
+                        </li>
+                    </ul>
+                    <img src="./assets/images/menu_alt.svg" alt="icon" class="block xl:hidden icon_menu" />
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Hero -->
+    <section class="hero bg-[#3873CC] text-white">
+        <div class="wrap">
+            <div class="bgWave waveOne"></div>
+            <div class="bgWave waveTwo"></div>
+        </div>
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="flex flex-col lg:flex-row gap-2 items-center">
+                <!-- Column 1 -->
+                <div class="py-8 md:py-10 max-w-[558px] hero-maxw">
+                    <h1 class="text-[32px] sm:text-[48px] font-bold capitalize hero-heading" data-aos="fade-right">
+                        get high quality services with Prime Doc billing
+                    </h1>
+                    <div class="flex flex-col md:flex-row gap-6 mt-8 md:mt-16" data-aos="fade-up">
+                        <button
+                            class="hover:border-white border border-[#00D1B2] shadow-lg hover:shadow-none transition duration-300 ease-in hero-btn py-4 px-8 capitalize bg-[#00D1B2] text-[18px] font-medium rounded"
+                            data-te-toggle="modal" data-te-target="#demoModal" data-te-ripple-init
+                            data-te-ripple-color="light">
+                            book a demo
+                        </button>
+                        <button
+                            class="hover:border-[#00D1B2] shadow-lg hover:shadow-none transition duration-300 ease-in-out hero-btn py-4 px-8 capitalize border text-[15px] font-medium rounded"
+                            data-te-toggle="modal" data-te-target="#requestModal" data-te-ripple-init
+                            data-te-ripple-color="light">
+                            request a free practice analysis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="self-end over" data-aos="fade-left">
+                    <img src="./assets/images/Hero_Photo.png" alt="Photo" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-4">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="flex jutify-between items-center testimonial-slider">
+                <div class="mx-4">
+                    <img src="./assets/images/pf.png" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/cmd.png" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ng.png" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ECW-logo.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/kareo.png" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ehrf1.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ehrf2.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ehrf3.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ehrf4.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+                <div class="mx-4">
+                    <img src="./assets/images/ehrf5.jpeg" alt="Logo" class="max-h-[80px]" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Who We Are -->
+    <section class="py-12 lg:py-24 bg-[#EEFAF7]">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-x-2">
+                <div class="lg:col-span-5">
+                    <h2 class="text-[32px] text-[#1F2937] font-bold capitalize" data-aos="fade-right">
+                        who we are?
+                    </h2>
+                    <p class="mt-6 text-[#4B5563] leading-[28px]" data-aos="fade-right">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs. We have
+                        extensive experience working.
+                    </p>
+                    <div class="border border-[#20C197] mt-8" data-aos="fade-right"></div>
+                </div>
+                <div class="lg:col-start-7 lg:col-span-6">
+                    <div class="sm:grid sm:grid-cols-2">
+                        <div class="relative bg-[#DBEAFE] p-8 flex flex-col items-center justify-center min-h-[171px] overflow-hidden"
+                            data-aos="fade-left">
+                            <div
+                                class="absolute rounded-full bg-[#00D1B2] text-white text-[20px] leading-7 font-bold h-[84px] w-[84px] flex justify-center items-center pl-4 left-0 -top-4 -translate-x-4 pt-2">
+                                50+
+                            </div>
+                            <div class="flex flex-col items-center gap-5">
+                                <img src="./assets/images/happy_client.png" alt="icon" />
+                                <p class="text-[#4B5563] capitalize">happy clients</p>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden bg-[#EFF6FF] p-8 flex flex-col items-center justify-center min-h-[171px]"
+                            data-aos="fade-left">
+                            <div
+                                class="absolute rounded-full bg-[#00D1B2] text-white text-[20px] leading-7 font-bold h-[84px] w-[84px] flex justify-center items-center pr-4 right-0 -top-4 translate-x-4 pt-2">
+                                25+
+                            </div>
+                            <div class="flex flex-col items-center gap-5">
+                                <img src="./assets/images/Specialists.png" alt="icon" />
+                                <p class="text-[#4B5563] capitalize">specialists</p>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden bg-[#DBEAFE] sm:bg-[#EFF6FF] p-8 flex flex-col items-center justify-center min-h-[171px]"
+                            data-aos="fade-left">
+                            <div
+                                class="absolute rounded-full bg-[#00D1B2] text-white text-[20px] leading-0 font-bold h-[84px] w-[84px] flex justify-center items-center pl-4 left-0 -top-4 -translate-x-4 pt-2">
+                                <div class="flex flex-col">
+                                    10+<span class="text-[12px] leading-0 font-semibold">Years</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-5">
+                                <img src="./assets/images/InBusiness.png" alt="icon" />
+                                <p class="text-[#4B5563] capitalize">in business</p>
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden bg-[#EFF6FF] sm:bg-[#DBEAFE] p-8 flex flex-col items-center justify-center min-h-[171px]"
+                            data-aos="fade-left">
+                            <div
+                                class="absolute rounded-full bg-[#00D1B2] text-white text-[20px] leading-7 font-bold h-[84px] w-[84px] flex justify-center items-center pr-4 right-0 -top-4 translate-x-4 pt-2">
+                                35+
+                            </div>
+                            <div class="flex flex-col items-center gap-5">
+                                <img src="./assets/images/States.png" alt="icon" />
+                                <p class="text-[#4B5563] capitalize">States</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section class="py-10 lg:py-16 bg-[#F1F5F9]">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="max-w-[950px] flex flex-col gap-6 justify-center items-center mx-auto mb-16">
+                <h2 class="text-[32px] font-bold leading-[36px] capitalize text-center" data-aos="fade-up">
+                    services we offer
+                </h2>
+                <p class="text-[#4B5563] leading-[28px] text-center" data-aos="fade-up">
+                    Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                    needs in a cost ective manner. Our variety of business model's help the client's to
+                    avail top quality services according to their requirements and needs. We have extensive
+                    experience working.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_billing.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">medical billing & coding</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_revenue.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">revenue cycle management</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_cred.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">credentialing</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_pm.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">practice management</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_Ar.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">ar follow up & denial management
+                                    </h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_scribing.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">scribing</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_pa.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">prior authorization</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_vob.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">verification of benefits</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card xl:col-start-2" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_wd.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">website development</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="flip-card lg:col-start-2 xl:col-start-3" data-aos="fade-up">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/images/img_va.png" alt="Photo"
+                                class="w-full object-cover flip-card__photo" />
+                            <div class="py-5 px-4 flex flex-col items-center gap-3">
+                                <div class="flex flex-col gap-3 text-center">
+                                    <h5 class="text-[#334155] font-semibold capitalize">virtual assistant</h5>
+                                    <p class="text-[#334155] text-[14px] italic font-light">
+                                        Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                        clients.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flip-card-back p-3 flex flex-col items-center justify-center bg-[#3873CC] text-white">
+                            <p class="text-[14px] italic font-light text-white">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in soluta,
+                                repellendus accusantium
+                                iure blanditiis quibusdam? Ab laborum fugiat in dolores quisquam vel quis aliquam ipsum,
+                                consectetur
+                                aperiam temporibus odit?
+                                Aliquam non, maxime eaque perferendis laboriosam dolore ut eos veniam optio ullam
+                                reprehenderit nobis
+                                aperiam aliquid quaerat
+                            </p>
+                            <a href="#"
+                                class="uppercase px-4 py-1 border-b border-width-1 mt-4 text-[14px] flex items-center gap-3">explore
+                                more <img src="./assets/images/icon_right_white.png" alt="icon" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center" data-aos="fade-up">
+                <a href="./services.html"
+                    class="py-3 px-8 capitalize bg-[#00D1B2] text-white text-[14px] font-semibold mt-14 inline-block">explore</a>
+            </div>
+        </div>
+    </section>
+    <!-- Business Modal -->
+    <section class="py-10 lg:py-16">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="md:flex justify-between">
+                <div class="flex flex-col gap-6 mb-16 flex-1">
+                    <h2 class="text-[32px] font-bold leading-[36px] capitalize" data-aos="fade-right">
+                        Our Business Models
+                    </h2>
+                    <p class="text-[#4B5563] leading-[28px]" data-aos="fade-right">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs. We have
+                        extensive experience working.
+                    </p>
+                </div>
+                <div class="flex-1">
+                    <img src="./assets/images/img_businessmodal.png" alt="Photo" class="mx-auto" data-aos="fade-left" />
+                </div>
+            </div>
+            <div class="mt-16 mx-auto max-w-[940px] shadow-lg">
+                <div class="md:grid grid-cols-2">
+                    <div data-aos="fade-up">
+                        <img src="./assets/images/img_percentage.png" alt="Photo" />
+                    </div>
+                    <div class="flex flex-col gap-4 bg-white p-6" data-aos="fade-up">
+                        <h5 class="text-[#1E293B] text-[20px font-medium text-capitalize]">
+                            Percentage Modal
+                        </h5>
+                        <p class="text-[#52525B] text-[14px] leading-[26px]">
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo conUt enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo conUt enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo conUt enim ad minim veniam, quis
+                            nostrudUt enim ad minim veniam, quis
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4 bg-white p-6" data-aos="fade-up">
+                        <h5 class="text-[#1E293B] text-[20px font-medium text-capitalize]">
+                            Percentage Modal
+                        </h5>
+                        <p class="text-[#52525B] text-[14px] leading-[26px]">
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo conUt enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                            nisi ut aliquip ex ea commodo conUt enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo conUt enim ad minim veniam, quis
+                            nostrudUt enim ad minim veniam, quis
+                        </p>
+                    </div>
+                    <div data-aos="fade-up">
+                        <img src="./assets/images/img_percentage2.png" alt="Photo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Outsourcing -->
+    <section class="py-10 lg:py-16 bg-[url('./assets/images/img_outsourcing.png')] bg-cover">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="max-w-[950px] flex flex-col gap-6 justify-center items-center mx-auto mb-16">
+                <h2 class="text-[32px] font-bold leading-[36px] capitalize text-center text-white" data-aos="fade-up">
+                    benefit of outsourcing
+                </h2>
+                <p class="text-white leading-[28px] text-center" data-aos="fade-up">
+                    Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                    needs in a cost ective manner. Our variety of business model's help the client's to
+                    avail top quality services according to their requirements and needs. We have extensive
+                    experience working.
+                </p>
+            </div>
+            <!-- Cards -->
+            <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[940px]">
+                <!-- Item -->
+                <div class="p-6 bg-white" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/img_reducecost.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">reduce cost</p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[#F3F4F6]" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/FocusOnPatientCare.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">Focus On Patient Care</p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-white" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/BoostingRevenue.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">boosting revenue</p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[#F3F4F6]" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/dedicatedteamofexperts.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">dedicated team of experts</p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-white" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/MinimizeYourAdministrativeWorkload.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">
+                                minimize your administrative workload
+                            </p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[#F3F4F6]" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-6">
+                        <img src="./assets/images/Transparency&Reporting.png" alt="icon" />
+                        <div class="flex flex-col items-center gap-3">
+                            <p class="text-[#4B5563] capitalize text-center">transparency & reporting</p>
+                            <p class="text-[#6B7280] text-[14px] font-light capitalize italic text-center">
+                                Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                                clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Offer -->
+    <section class="py-10 lg:py-16 bg-[#F1F5F9]">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="max-w-[950px] flex flex-col gap-6 justify-center items-center mx-auto mb-16">
+                <h2 class="text-[32px] font-bold leading-[36px] capitalize text-center" data-aos="fade-up">
+                    whom we serve
+                </h2>
+                <p class="text-[#4B5563] leading-[28px] text-center" data-aos="fade-up">
+                    Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                    needs in a cost ective manner. Our variety of business model's help the client's to
+                    avail top quality services according to their requirements and needs. We have extensive
+                    experience working.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-[940px] mx-auto">
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/CardServe.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">
+                            individual doctors
+                        </h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/nurse_practitioners.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">
+                            nurse practitioners
+                        </h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/private_prc.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">
+                            private practices
+                        </h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/serve_lab.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">
+                            laboratories
+                        </h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/serve_hospitals.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">hospitals</h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="p-6 bg-[url(./assets/images/serve_mbc.png)] bg-cover" data-aos="fade-up">
+                    <div class="flex flex-col items-center gap-3">
+                        <h5 class="text-[18px] font-bold leading-[28px] capitalize text-white">
+                            medical billing companies
+                        </h5>
+                        <p class="text-center text-white text-[14px] font-light capitalize">
+                            Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor it's
+                            clients.Prime Doc Billing adopts a dynamic and exible approach for it's clientsfor
+                            it's clients.Prime...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Choose Us -->
+    <section class="py-10 lg:py-16">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <h2 class="text-[32px] font-bold leading-[36px] capitalize text-center mb-10 md:mb-16" data-aos="fade-up">
+                why choose us
+            </h2>
+            <div class="flex flex-col lg:flex-row justify-between gap-10 items-center lg:items-start">
+                <ul class="flex flex-col gap-8 lg:max-w-[512px] mt-16">
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-right">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-left">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-right">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-left">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-right">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-left">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                    <li class="flex gap-4 items-start text-[#3F3F46] font-light" data-aos="fade-right">
+                        <img src="./assets/images/check.png" alt="icon" />
+                        Prime Doc Billing adopts a dynamic and approach for it's clients to cater their needs
+                        in a cost manner.
+                    </li>
+                </ul>
+                <div class="p-4 md:p-8 bg-[url(./assets/images/form_bg.png)] w-full max-w-[618px]">
+                    <form action="#" class="bg-white p-4 md:p-8" data-aos="fade-left">
+                        <div class="flex flex-col gap-6">
+                            <h4 class="text-[#1E293B] text-[24px] font-bold leading-[28px] capitalise mb-4">
+                                Book A Demo
+                            </h4>
+                            <div class="flex flex-col gap-6">
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="first_name" class="text-[#3F3F46] capitalise text-sm">First Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="First Name" name="first_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="first_name" />
+
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="last_name" class="text-[#3F3F46] capitalise text-sm">Last Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Last Name" name="last_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="last_name" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="pcompany_name" class="text-[#3F3F46] capitalise text-sm">Company
+                                            Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Company Name" name="pcompany_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="pcompany_name" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="email" class="text-[#3F3F46] capitalise text-sm">Email
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Email"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="email" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="phone_number" class="text-[#3F3F46] capitalise text-sm">Phone Number
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Phone Number"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="phone_number" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="date-time" class="text-[#3F3F46] capitalise text-sm">Schedule
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="date" placeholder="Schedule"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="date-time" />
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1 w-full">
+                                    <textarea name="message" id="message" cols="2" rows="5"
+                                        placeholder="Message(optional)"
+                                        class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-lighter"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="bg-[#20C197] rounded-sm text-white text-lg capitalize font-medium mt-4 md:mt-8 px-6 py-2 md:py-4 shadow-lg hover:shadow-none transition duration-300">
+                                submit
+                            </button>
+                        </div>
+                </div>
+            </div>
+    </section>
+    <!-- FAQ's -->
+    <section class="py-10 lg:py-16">
+        <div
+            class="2xl:max-w-[1284px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <h2 class="text-[32px] font-bold leading-[36px] capitalize text-center mb-10 md:mb-16" data-aos="fade-up">
+                FAQ'S
+            </h2>
+            <ul class="divide-y">
+                <li class="capitalize text-[#3F3F46] font-medium text-[16px] md:text-[20px] px-4 pt-4 border-t overflow-hidden accordion__item"
+                    data-aos="fade-up">
+                    <div class="flex justify-between cursor-pointer pb-4">
+                        <span>our pricing plan</span>
+                        <img src="./assets/images/accordion_expanded.png" alt="icon" class="w-8 h-8 md:w-10 md:h-10" />
+                    </div>
+                    <p class="text-[#52525B] font-light text-[16px] mt-3 leading-[28px]">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs.Prime Doc Billing
+                        adopts a dynamic and exible approach for it's clients to cater their needs in a cost
+                        ective manner. Our variety of business model's help the client's to avail top quality
+                        services according to their requirements and needs.
+                    </p>
+                </li>
+                <li class="capitalize text-[#3F3F46] font-medium text-[16px] md:text-[20px] px-4 pt-4 border-t overflow-hidden accordion__item"
+                    data-aos="fade-up">
+                    <div class="flex justify-between cursor-pointer pb-4">
+                        <span>our pricing plan</span>
+                        <img src="./assets/images/accordion_plus.png" alt="icon" class="w-8 h-8 md:w-10 md:h-10" />
+                    </div>
+                    <p class="text-[#52525B] font-light text-[16px] mt-3 leading-[28px] hidden">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs.Prime Doc Billing
+                        adopts a dynamic and exible approach for it's clients to cater their needs in a cost
+                        ective manner. Our variety of business model's help the client's to avail top quality
+                        services according to their requirements and needs.
+                    </p>
+                </li>
+                <li class="capitalize text-[#3F3F46] font-medium text-[16px] md:text-[20px] px-4 pt-4 border-t overflow-hidden accordion__item"
+                    data-aos="fade-up">
+                    <div class="flex justify-between cursor-pointer pb-4">
+                        <span>our pricing plan</span>
+                        <img src="./assets/images/accordion_plus.png" alt="icon" class="w-8 h-8 md:w-10 md:h-10" />
+                    </div>
+                    <p class="text-[#52525B] font-light text-[16px] mt-3 leading-[28px] hidden">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs.Prime Doc Billing
+                        adopts a dynamic and exible approach for it's clients to cater their needs in a cost
+                        ective manner. Our variety of business model's help the client's to avail top quality
+                        services according to their requirements and needs.
+                    </p>
+                </li>
+                <li class="capitalize text-[#3F3F46] font-medium text-[16px] md:text-[20px] px-4 pt-4 border-t overflow-hidden accordion__item"
+                    data-aos="fade-up">
+                    <div class="flex justify-between cursor-pointer pb-4">
+                        <span>our pricing plan</span>
+                        <img src="./assets/images/accordion_plus.png" alt="icon" class="w-8 h-8 md:w-10 md:h-10" />
+                    </div>
+                    <p class="text-[#52525B] font-light text-[16px] mt-3 leading-[28px] hidden">
+                        Prime Doc Billing adopts a dynamic and exible approach for it's clients to cater their
+                        needs in a cost ective manner. Our variety of business model's help the client's to
+                        avail top quality services according to their requirements and needs.Prime Doc Billing
+                        adopts a dynamic and exible approach for it's clients to cater their needs in a cost
+                        ective manner. Our variety of business model's help the client's to avail top quality
+                        services according to their requirements and needs.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#3873CC] py-8">
+        <div
+            class="2xl:max-w-[1536px] xl:max-w-[1152px] lg:max-w-[984px] md:max-w-[744px] sm:max-w-[100%] px-6 sm:px-3 mx-auto">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-16">
+                <!-- Column -->
+                <div>
+                    <a href="./index.html">
+                        <img src="./assets/images/logo_footer.png" alt="logo" data-aos="fade-up" />
+                    </a>
+                </div>
+                <!-- Column -->
+                <div class="flex flex-col gap-5" data-aos="fade-up">
+                    <h4 class="text-[16px] text-white uppercase font-bold">services</h4>
+                    <ul class="flex flex-col gap-2">
+                        <li>
+                            <a href="./billing.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">Medical Billing &
+                                Coding</a>
+                        </li>
+                        <li>
+                            <a href="./rcm.html" target="_blank" class="text-[#F4F4F5] text-[14px] capitalize">Revenue
+                                Cycle
+                                Management</a>
+                        </li>
+                        <li>
+                            <a href="./credentialing.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">Credentialing</a>
+                        </li>
+                        <li>
+                            <a href="./practice-managment.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">Practice
+                                Management</a>
+                        </li>
+                        <li>
+                            <a href="./ar.html" target="_blank" class="text-[#F4F4F5] text-[14px] capitalize">AR Follow
+                                Up & Danial
+                                Management</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column -->
+                <div class="flex flex-col gap-5" data-aos="fade-up">
+                    <div class="mb-0 md:mb-5"></div>
+                    <ul class="flex flex-col gap-2">
+                        <li>
+                            <a href="./prior-authorization.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">prior
+                                authorization</a>
+                        </li>
+                        <li>
+                            <a href="./scribing.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">scribing</a>
+                        </li>
+                        <li>
+                            <a href="./verification.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">verification
+                                of benefits</a>
+                        </li>
+                        <li>
+                            <a href="./website-dev.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">website
+                                development</a>
+                        </li>
+                        <li>
+                            <a href="./virtual.html" target="_blank"
+                                class="text-[#F4F4F5] text-[14px] capitalize">virtual
+                                assistant</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column -->
+                <div class="flex flex-col gap-5" data-aos="fade-up">
+                    <h4 class="text-[16px] text-white uppercase font-bold">about us</h4>
+                    <ul class="flex flex-col gap-2">
+                        <li>
+                            <a href="./mission.html" target="_blank" class="text-[#F4F4F5] text-[14px] capitalize">Mission / Vission</a>
+                        </li>
+                        <li>
+                            <a href="./corevalues.html" target="_blank" class="text-[#F4F4F5] text-[14px] capitalize">core values</a>
+                        </li>
+                        <li>
+                            <a href="./profile.html" target="_blank" class="text-[#F4F4F5] text-[14px] capitalize">company profile</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Column -->
+                <div class="flex flex-col gap-5" data-aos="fade-up">
+                    <h4 class="text-[16px] text-white uppercase font-bold">quick links</h4>
+                    <ul class="flex flex-col gap-3">
+                        <li>
+                            <a href="mailto:info@primedocbilling.com"
+                                class="text-[#F4F4F5] text-[14px] flex gap-2 items-start">
+                                <img src="./assets/images/mail.png" alt="icon" />
+                                <span>info@primedocbilling.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:(347) 650-2656"
+                                class="text-[#F4F4F5] text-[14px] capitalize flex gap-2 items-start">
+                                <img src="./assets/images/phone_outline.png" alt="icon" />
+                                <span>(347) 650-2656</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-[#F4F4F5] text-[14px] capitalize flex gap-2 items-start">
+                                <img src="./assets/images/message.png" alt="icon" />
+                                <span>Chat With Us </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-[#F4F4F5] text-[14px] capitalize flex gap-2 items-start">
+                                <img src="./assets/images/location_outline.png" alt="icon" />
+                                <span> 324 E 9th St, Brooklyn, NY 11218, United States </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-[#F4F4F5] text-[14px] capitalize mt-3">follow us on</a>
+                        </li>
+                        <span class="flex gap-4 items-center">
+                            <li>
+                                <a href="#"><img src="./assets/images/facebook.png" alt="facebook" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./assets/images/twitter.png" alt="twitter" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./assets/images/instagram.png" alt="instagram" /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="./assets/images/invision.png" alt="linkedin" /></a>
+                            </li>
+                        </span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="loader-container">
+            <span class="loader"></span>
+            <span class="text-white">Loading...</span>
+        </div>
+        <!-- Form Demo -->
+        <div data-te-modal-init
+            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none py-2 px-[8px]"
+            id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+            <div data-te-modal-dialog-ref
+                class="pointer-events-none relative w-auto translate-y-[-50px] transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[768px]:max-w-[540px]">
+                <div
+                    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                    <div
+                        class="py-8 flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                        <!--Modal title-->
+                        <h4 class="text-[#1E293B] text-[24px] font-bold leading-[28px] capitalize">
+                            book a demo
+                        </h4>
+                        <!--Close button-->
+                        <button type="button"
+                            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                            data-te-modal-dismiss aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!--Modal body-->
+                    <div class="relative flex-auto p-8 mx-auto w-full" data-te-modal-body-ref>
+                        <form action="#">
+                            <div class="flex flex-col gap-6">
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="first_name" class="text-[#3F3F46] capitalise text-sm">First Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="First Name" name="first_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="first_name" />
+
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="last_name" class="text-[#3F3F46] capitalise text-sm">Last Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Last Name" name="last_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="last_name" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="email" class="text-[#3F3F46] capitalise text-sm">Email
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Email"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="email" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="phone_number" class="text-[#3F3F46] capitalise text-sm">Phone Number
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Phone Number"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="phone_number" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="pcompany_name" class="text-[#3F3F46] capitalise text-sm">Company
+                                            Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Company Name" name="pcompany_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="pcompany_name" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="date-time" class="text-[#3F3F46] capitalise text-sm">Schedule
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="date" placeholder="Schedule"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="date-time" />
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1 w-full">
+                                    <textarea name="message" id="message" cols="2" rows="5"
+                                        placeholder="Message(optional)"
+                                        class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-lighter"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="bg-[#20C197] rounded-sm text-white capitalize font-medium mt-8 px-6 py-2 shadow-lg hover:shadow-none transition duration-300">
+                                submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Form Practice -->
+        <div data-te-modal-init
+            class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none py-2 px-[8px]"
+            id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+            <div data-te-modal-dialog-ref
+                class="pointer-events-none relative w-auto translate-y-[-50px] transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] min-[768px]:max-w-[540px]">
+                <div
+                    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                    <div
+                        class="py-8 flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                        <!--Modal title-->
+                        <h4 class="text-[#1E293B] text-[24px] font-bold leading-[28px] capitalize">
+                            request a free practice analysis
+                        </h4>
+                        <!--Close button-->
+                        <button type="button"
+                            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                            data-te-modal-dismiss aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!--Modal body-->
+                    <div class="relative flex-auto p-8 mx-auto w-full" data-te-modal-body-ref>
+                        <form action="#">
+                            <div class="flex flex-col gap-6">
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="practice_name" class="text-[#3F3F46] capitalise text-sm">Practice
+                                            Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Practice Name" name="practice_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="practice_name" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="cp_name" class="text-[#3F3F46] capitalise text-sm">Concerned Person
+                                            Name
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Concerned Person Name" name="cp_name"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="cp_name" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="email" class="text-[#3F3F46] capitalise text-sm">Email
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Email"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="email" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="phone_number" class="text-[#3F3F46] capitalise text-sm">Phone Number
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Phone Number"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="phone_number" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="speciality" class="text-[#3F3F46] capitalise text-sm">Speciality
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Speciality" name="speciality"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="speciality" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="providers" class="text-[#3F3F46] capitalise text-sm">Numbers Of
+                                            Providers
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Numbers Of Providers"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="providers" />
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 flex-col md:flex-row w-full">
+                                    <div class="flex gap-1 flex-col w-full">
+                                        <label for="ehr" class="text-[#3F3F46] capitalise text-sm">Current EHR
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Current EHR"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="ehr" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 w-full">
+                                        <label for="date-time" class="text-[#3F3F46] capitalise text-sm">Schedule
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <input type="date" placeholder="Schedule"
+                                            class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-light"
+                                            id="date-time" />
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-1 w-full">
+                                    <textarea name="message" id="message" cols="2" rows="5"
+                                        placeholder="Message(optional)"
+                                        class="w-full border-b border-gray-300 py-2 pr-4 focus:outline-none text-sm focus:border-[#20C197] placeholder:font-lighter"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="bg-[#20C197] rounded-sm text-white capitalize font-medium mt-8 px-6 py-2 shadow-lg hover:shadow-none transition duration-300">
+                                submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts Imcluded Here -->
+        <script src="js/vendors/jquery-3.7.0.min.js"></script>
+        <script src="js/plugins/slick.1.8.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="bundle.js"></script>
+    </footer>
+</body>
+
+</html>
