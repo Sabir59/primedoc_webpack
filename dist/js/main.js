@@ -30,9 +30,7 @@ $(document).ready(function () {
   });
 
   $(".mobile_droptoggler").click(function () {
-    $(".mobile_dropdown")
-      .not($(this).next(".mobile_dropdown"))
-      .slideUp();
+    $(".mobile_dropdown").not($(this).next(".mobile_dropdown")).slideUp();
     $(this).next(".mobile_dropdown").slideToggle();
   });
 
@@ -50,10 +48,7 @@ $(document).ready(function () {
 
     // Slide up all other p elements and reset their image sources
     $(this).siblings().find("p").slideUp();
-    $(this)
-      .siblings()
-      .find("img")
-      .attr("src", "assets/images/accordion_plus.png");
+    $(this).siblings().find("img").attr("src", "assets/images/accordion_plus.png");
   });
 
   $(".search_icon_toggler").click(function () {
@@ -84,9 +79,9 @@ $(document).ready(function () {
     $(".demo-form").removeClass("translate-y-8 opacity-0");
   });
 
-  $(
-    ".demo-form-container, .search-form-container, .practice-form-container"
-  ).click(function (event) {
+  $(".demo-form-container, .search-form-container, .practice-form-container").click(function (
+    event
+  ) {
     if (event.target === this) {
       $(this).addClass("invisible");
       $(".searchform").addClass("invisible translate-y-4 opacity-0");

@@ -29,28 +29,12 @@ body {
     font-size: clamp(2rem, calc(-2.34rem + 6.78vw), 3rem) !important;
   }
   .hero-maxw {
-    max-width: clamp(
-      26.88rem,
-      calc(-7.84rem + 54.24vw),
-      34.88rem
-    ) !important;
+    max-width: clamp(26.88rem, calc(-7.84rem + 54.24vw), 34.88rem) !important;
   }
   .hero-btn {
-    font-size: clamp(
-      1rem,
-      calc(0.46rem + 0.85vw),
-      1.13rem
-    ) !important;
-    padding-left: clamp(
-      1rem,
-      calc(6.34rem + -6.78vw),
-      2rem
-    ) !important;
-    padding-right: clamp(
-      1rem,
-      calc(6.34rem + -6.78vw),
-      2rem
-    ) !important;
+    font-size: clamp(1rem, calc(0.46rem + 0.85vw), 1.13rem) !important;
+    padding-left: clamp(1rem, calc(6.34rem + -6.78vw), 2rem) !important;
+    padding-right: clamp(1rem, calc(6.34rem + -6.78vw), 2rem) !important;
   }
 }
 
@@ -111,25 +95,9 @@ input[type="date"] {
 }
 .hero,
 .section-services {
-  background-image: linear-gradient(
-    to right,
-    #3873cced 0%,
-    #3873cc00 100%
-  );
+  background-image: linear-gradient(to right, #3873cc 100%, #3873cc 100%);
   width: 100%;
   position: relative;
-}
-.section-services--about {
-  background-image: -webkit-linear-gradient(
-    left,
-    #3873cc 0%,
-    #3873cc 100%
-  );
-  background-image: linear-gradient(
-    to right,
-    #3873cc 0%,
-    #3873cc 100%
-  );
 }
 .wrap {
   overflow: hidden;
